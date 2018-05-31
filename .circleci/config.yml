@@ -27,7 +27,7 @@ jobs:
           command: npm start
           background: true
 
-      - run: sleep 2 && npm test
+      - run: sleep 5 && npm test
 
       - run:
           command: |

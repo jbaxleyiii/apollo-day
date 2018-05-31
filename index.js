@@ -3,17 +3,36 @@ const { ApolloServer, gql } = require('apollo-server');
 const typeDefs = gql`
   type Query {
     hello: String
-    apolloDay: String
+    # Gets the Apollo Day event 💯
+    apolloDay: Event
+    # DEPRECATED: supporting service no longer exists 😥
+    myOldField: String @deprecated(reason: "this does nothing")
   }
 
   type Event {
     name: String!
+    # Format: YYYY-MM-DD
     date: String
+    # Plain english description of the weather
     weather: String
   }
 `;
 
-const resolvers = {};
+const resolvers = {
+  Query: {
+    hello: () => 'What it do 🤔🤨',
+    apolloDay: () => ({
+      name: 'Apollo Day',
+      date: '2018-05-31',
+      weather: () =>
+        new Promise((resolve, reject) => {
+          let wait = setTimeout(() => {
+            resolve('Too cold');
+          }, 2000);
+        }),
+    }),
+  },
+};
 
 const server = new ApolloServer({
   typeDefs,

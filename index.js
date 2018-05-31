@@ -2,8 +2,7 @@ const { ApolloServer, gql } = require('apollo-server');
 
 const typeDefs = gql`
   type Query {
-    ohhai: String
-    # hello: String
+    hello: String
     # Gets the Apollo Day event 💯
     apolloDay: Event
     # DEPRECATED: supporting service no longer exists 😥
@@ -21,7 +20,7 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    // hello: () => 'What it do 🤔🤨',
+    hello: () => 'What it do 🤔🤨',
     apolloDay: () => ({
       name: 'Apollo Day',
       date: '2018-05-31',

@@ -5,7 +5,7 @@ const typeDefs = gql`
     hello: String
     aNewThing: String
     # Gets the Apollo Day event 💯
-    apolloDay: Event
+    apolloDay: String
     # DEPRECATED: supporting service no longer exists 😥
     myOldField: String @deprecated(reason: "this does nothing")
   }

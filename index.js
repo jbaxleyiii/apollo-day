@@ -5,6 +5,12 @@ const typeDefs = gql`
     hello: String
     apolloDay: String
   }
+
+  type Event {
+    name: String!
+    date: String
+    weather: String
+  }
 `;
 
 const resolvers = {};

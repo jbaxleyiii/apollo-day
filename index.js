@@ -28,7 +28,7 @@ const resolvers = {
         new Promise((resolve, reject) => {
           let wait = setTimeout(() => {
             resolve('Too cold');
-          }, 2000);
+          }, Math.random() * 5000);
         }),
     }),
   },
@@ -37,17 +37,12 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  engine: {
+    apiKey: 'service:ad-demo-1:Jr7nM_c4dTvw1e50SO9qnA',
+    endpointUrl: 'https://engine-staging-report.apollodata.com',
+  },
 });
 
-server
-  .listen({
-    engineProxy: {
-      apiKey: 'service:ad-demo-1:Jr7nM_c4dTvw1e50SO9qnA',
-      reporting: {
-        endpointUrl: 'https://engine-staging-report.apollodata.com',
-      },
-    },
-  })
-  .then(({ url }) => {
-    console.log(`🚀 Server ready at ${url}`);
-  });
+server.listen().then(({ url }) => {
+  console.log(`🚀 Server ready at ${url}`);
+});

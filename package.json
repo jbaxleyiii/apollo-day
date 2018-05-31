@@ -7,8 +7,7 @@
     "deploy": "apollo schema:publish"
   },
   "dependencies": {
-    "apollo-engine": "^1.1.1",
-    "apollo-server": "^2.0.0-beta.2",
+    "apollo-server": "2.0.0-beta.3",
     "graphql": "^0.13.2"
   },
   "devDependencies": {

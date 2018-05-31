@@ -2,6 +2,7 @@ const { ApolloServer, gql } = require('apollo-server');
 
 const typeDefs = gql`
   type Query {
+    waddup: String
     hello: String
     # Gets the Apollo Day event 💯
     apolloDay: Event

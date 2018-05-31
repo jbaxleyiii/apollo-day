@@ -1,0 +1,28 @@
+const { ApolloServer, gql } = require('apollo-server');
+
+const typeDefs = gql`
+  type Query {
+    hello: String
+    apolloDay: String
+  }
+`;
+
+const resolvers = {};
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
+
+server
+  .listen({
+    engineProxy: {
+      apiKey: 'service:ad-demo-1:Jr7nM_c4dTvw1e50SO9qnA',
+      reporting: {
+        endpointUrl: 'https://engine-staging-report.apollodata.com',
+      },
+    },
+  })
+  .then(({ url }) => {
+    console.log(`🚀 Server ready at ${url}`);
+  });

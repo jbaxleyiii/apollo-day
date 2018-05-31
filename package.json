@@ -1,0 +1,17 @@
+{
+  "name": "apollo-server-example",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "apollo schema:check",
+    "deploy": "apollo schema:publish"
+  },
+  "dependencies": {
+    "apollo-engine": "^1.1.1",
+    "apollo-server": "^2.0.0-beta.2",
+    "graphql": "^0.13.2"
+  },
+  "devDependencies": {
+    "apollo": "^1.0.0-alpha.1"
+  }
+}

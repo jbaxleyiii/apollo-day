@@ -24,10 +24,10 @@ jobs:
         
       - run:
           name: Running Server
-          command: npm start
+          command: npm start & npm test
           background: true
 
-      - run: npm test
+      # - run: npm test
 
       - run:
           command: |
